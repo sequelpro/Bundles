@@ -11,7 +11,17 @@
 
 &lt;pre&gt;
 &lt;?php
- print_r( unserialize(fgets(STDIN)));
+function goFormatVarExport($string) {
+	return preg_replace(array(
+		'/=&gt;\s+array\(/im',
+		'/array\(\s+\)/im',
+	), array(
+		'=&gt; array(',
+		'array()',
+	), str_replace('array (', 'array(', $string));
+}
+
+print_r(goFormatVarExport(var_export(unserialize(fgets(STDIN)), TRUE)));
 ?&gt;
 &lt;/pre&gt;</string>
 	<key>contact</key>
