@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>author</key>
+	<string>Mark Carver</string>
+	<key>category</key>
+	<string>Format</string>
+	<key>command</key>
+	<string>#!/usr/bin/php
+
+&lt;?php
+  $input = fgets(STDIN);
+  if ($unserialized = unserialize($input)) { 
+    $input = $unserialized;
+  }
+  include_once $_SERVER['SP_BUNDLE_PATH'] . '/krumo/class.krumo.php';
+  if ((is_object($input) || is_array($input)) &amp;&amp; function_exists('krumo')) {
+    print krumo($input);
+  }
+  else {
+    print '&lt;pre&gt;' . print_r($input, TRUE) . '&lt;/pre&gt;';
+  }
+?&gt;</string>
+	<key>description</key>
+	<string>Deserializes those PHP objects that drupal loves so much. Deserialize PHP with Krumo.</string>
+	<key>input</key>
+	<string>selectedtext</string>
+	<key>input_fallback</key>
+	<string>entirecontent</string>
+	<key>internalKeyEquivalent</key>
+	<dict>
+		<key>characters</key>
+		<string>D</string>
+		<key>keyCode</key>
+		<integer>2</integer>
+		<key>modifierFlags</key>
+		<integer>1179648</integer>
+	</dict>
+	<key>keyEquivalent</key>
+	<string>$@D</string>
+	<key>name</key>
+	<string>Deserialize PHP with Krumo</string>
+	<key>output</key>
+	<string>showashtml</string>
+	<key>scope</key>
+	<string>inputfield</string>
+	<key>uuid</key>
+	<string>8F858F4D-9DCC-488A-B01C-D9F7FA32FE33</string>
+</dict>
+</plist>

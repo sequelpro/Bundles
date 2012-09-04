@@ -15,9 +15,10 @@ We will update the list of contributed bundles on our website as we get time. If
 
 ## Latest Updates
 
-### August 2012
+### September 2012
   * We have broken the bundles up into Core and Contributed bundles.
   * Integrated bundles from [voxpelli][6] and [liviutudor][7]. Thanks guys!
+  * Bundle from [markcarver][10] added.
 
 ### October 2011
   * Integrated bundle from [andrewfulton][5], thanks!
@@ -36,3 +37,4 @@ Contact [Sequel Pro][3] on Twitter with any questions.
 [7]: https://github.com/liviutudor "Liviu Tudor"
 [8]: http://sequelpro.com/bundles/share "Share your Bundle"
 [9]: https://github.com/sequelpro/Bundles "Sequel Pro Bundles on github"
+[10]: https://github.com/markcarver "Mark Carver"
