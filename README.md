@@ -11,6 +11,7 @@ Simply fork this repo and add any new modules to the __contributed__ folder. App
 
 We will update the list of contributed bundles on our website as we get time. If you would prefer not to contribute using github you can share your bundle [however you like][8]. 
 
+![Image of Bundle Editor](http://www.sequelpro.com/w/images/6/67/New_Bundle_Editor_Screenshot.png "Image of Bundle Editor")
 
 ## Latest Updates
 
