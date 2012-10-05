@@ -21,7 +21,7 @@
 }' | __CF_USER_TEXT_ENCODING=$UID:0x8000100:0x8000100 pbcopy
 growlnotify -m "IDs copied to clipboard"</string>
 	<key>contact</key>
-	<string>Uhyynonybb Ivfhny Pbzzhavpngvbaf</string>
+	<string>zngg@uhyynonybb.pb.hx</string>
 	<key>description</key>
 	<string>Copies the ID (assumed to be the first field) from each record, as a comma separated string.
 
