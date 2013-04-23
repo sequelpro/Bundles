@@ -19,7 +19,9 @@
 		print id
 	}
 }' | __CF_USER_TEXT_ENCODING=$UID:0x8000100:0x8000100 pbcopy
-growlnotify -m "IDs copied to clipboard"</string>
+if [ -x /usr/local/bin/growlnotify ]; then
+    growlnotify -m "IDs copied to clipboard"
+fi</string>
 	<key>contact</key>
 	<string>zngg@uhyynonybb.pb.hx</string>
 	<key>description</key>
