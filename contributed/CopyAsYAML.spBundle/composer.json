@@ -1,0 +1,14 @@
+{
+    "name": "josser/copy-as-yaml.sp-bundle",
+    "description": "Sequle Pro bundle to copy data from tables as YAML structures",
+    "require": {
+        "symfony/yaml": "2.3.*"
+    },
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "Dmitry Chirkin",
+            "email": "dmitry.chirkin@gmail.com"
+        }
+    ]
+}
