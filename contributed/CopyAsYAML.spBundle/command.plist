@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>author</key>
+	<string>Dmitry Chirkin</string>
+	<key>category</key>
+	<string></string>
+	<key>command</key>
+	<string>cat | php command.php | pbcopy</string>
+	<key>contact</key>
+	<string>qzvgel.puvexva@tznvy.pbz</string>
+	<key>defaultBundleWasModified</key>
+	<true/>
+	<key>description</key>
+	<string>Copies the selected rows excluding any BLOB data in a data table YAML formatted into the pasteboard.
+
+Version 1.0</string>
+	<key>input</key>
+	<string>selectedtablerowsascsv</string>
+	<key>isDefaultBundle</key>
+	<true/>
+	<key>keyEquivalent</key>
+	<string></string>
+	<key>name</key>
+	<string>Copy as YAML</string>
+	<key>output</key>
+	<string>none</string>
+	<key>scope</key>
+	<string>datatable</string>
+	<key>tooltip</key>
+	<string>Copies the selected rows excluding any BLOB data YAML formatted into the pasteboard</string>
+	<key>uuid</key>
+	<string>D2050275-0FEF-415F-9E5D-B4DE06B13748</string>
+</dict>
+</plist>
