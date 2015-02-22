@@ -2,10 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>author</key>
-	<string>Nick Tyler</string>
-	<key>command</key>
-	<string># check for empty STDIN
+<key>author</key>
+<string>Nick Tyler</string>
+<key>command</key>
+<string># check for empty STDIN
 SEARCHED_TABLE=$(cat)
 if [ -z "$SEARCHED_TABLE" ]; then
 	exit
@@ -35,36 +35,35 @@ else
 fi
 
 </string>
-	<key>contact</key>
-	<string>avpx@tbthneqvna.pbz</string>
-	<key>description</key>
-	<string>Enter a table name or a part of a table name, and this bundle will select the first matching table in the current database.</string>
-	<key>input</key>
-	<string>entirecontent</string>
-	<key>input_fallback</key>
-	<string>entirecontent</string>
-	<key>internalKeyEquivalent</key>
-	<dict>
-		<key>characters</key>
-		<string>
+<key>contact</key>
+<string>nick@goguardian.com</string>
+<key>description</key>
+<string>Enter a table name or a part of a table name, and this bundle will select the first matching table in the current database.</string>
+<key>input</key>
+<string>entirecontent</string>
+<key>input_fallback</key>
+<string>entirecontent</string>
+<key>internalKeyEquivalent</key>
+<dict>
+<key>characters</key>
+<string></string>
+<key>keyCode</key>
+<integer>36</integer>
+<key>modifierFlags</key>
+<integer>1048576</integer>
+</dict>
+<key>keyEquivalent</key>
+<string>@
 </string>
-		<key>keyCode</key>
-		<integer>36</integer>
-		<key>modifierFlags</key>
-		<integer>1048576</integer>
-	</dict>
-	<key>keyEquivalent</key>
-	<string>@
-</string>
-	<key>name</key>
-	<string>Table Switcher</string>
-	<key>output</key>
-	<string>replacecontent</string>
-	<key>scope</key>
-	<string>inputfield</string>
-	<key>tooltip</key>
-	<string>Switches to the currently filtered table, if one exists.</string>
-	<key>uuid</key>
-	<string>AA3566E7-96E4-4576-8D8C-E465A17264E9</string>
+<key>name</key>
+<string>Table Switcher</string>
+<key>output</key>
+<string>replacecontent</string>
+<key>scope</key>
+<string>inputfield</string>
+<key>tooltip</key>
+<string>Switches to the currently filtered table, if one exists.</string>
+<key>uuid</key>
+<string>AA3566E7-96E4-4576-8D8C-E465A17264E9</string>
 </dict>
 </plist>
