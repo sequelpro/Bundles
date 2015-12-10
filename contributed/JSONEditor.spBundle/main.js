@@ -31,4 +31,5 @@ window.onload = function() {
   });
   window.editor.set(record);
   window.editor.focus();
+  system.run("open sequelpro://" + spProcessId + "@passToDoc/ReloadContentTable");
 }
