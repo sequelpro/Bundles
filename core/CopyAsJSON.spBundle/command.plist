@@ -54,7 +54,7 @@ while($rowData) {
 
 		# re-escape \t and \n
 		$cellData = $data[$i];
-		$cellData =~ s/↵/\n/g;
+		$cellData =~ s/↵/\\n/g;
 		$cellData =~ s/⇥/\t/g;
 
 		print "\t\t\t\"$header[$i]\": ";
