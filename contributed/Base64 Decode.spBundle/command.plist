@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>author</key>
+	<string>Koen Verheyen</string>
+	<key>category</key>
+	<string>Encode/Decode</string>
+	<key>command</key>
+	<string>#!/usr/bin/ruby
+
+# fetch selected text from STDIN
+selectedText = gets
+
+require 'base64'
+decoded = Base64.decode64(selectedText)
+
+print decoded
+</string>
+	<key>contact</key>
+	<string>uggcf://tvguho.pbz/ireurlraxbra</string>
+	<key>defaultBundleWasModified</key>
+	<true/>
+	<key>description</key>
+	<string>Base64 decodes the selected text.</string>
+	<key>input</key>
+	<string>selectedtext</string>
+	<key>input_fallback</key>
+	<string>entirecontent</string>
+	<key>isDefaultBundle</key>
+	<true/>
+	<key>keyEquivalent</key>
+	<string></string>
+	<key>name</key>
+	<string>Base64 Decode</string>
+	<key>output</key>
+	<string>replaceselection</string>
+	<key>scope</key>
+	<string>inputfield</string>
+	<key>uuid</key>
+	<string>69FCA611-516E-40EE-A6F0-9ECEBD53AAC1</string>
+</dict>
+</plist>
