@@ -1,0 +1,14 @@
+{
+    "name": "zarko/copy-as-mysql-cli.sp-bundle",
+    "description": "Sequel Pro bundle to copy data from tables as MySQL CLI tabular output",
+    "require": {
+        "symfony/console": "3.1.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zarko Stankovic",
+            "email": "stankovic.zarko@gmail.com"
+        }
+    ]
+}

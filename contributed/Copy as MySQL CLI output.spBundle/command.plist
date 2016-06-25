@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>author</key>
+	<string>Zarko Stankovic</string>
+	<key>category</key>
+	<string>Copy</string>
+	<key>command</key>
+	<string>#!/usr/bin/php
+&lt;?php
+
+use Symfony\Component\Console\Helper\Table;
+use Symfony\Component\Console\Output\BufferedOutput;
+
+require 'vendor/autoload.php';
+
+$output = new BufferedOutput();
+$rows = explode("\n", file_get_contents('php://stdin'));
+
+$table = new Table($output);
+$table
+    -&gt;setHeaders(explode("\t", $rows[0]))
+    -&gt;setRows(array_map(function ($row) { return explode("\t", $row); }, array_slice($rows, 1)))
+    -&gt;render();
+
+$cmd = 'echo '.escapeshellarg(trim($output-&gt;fetch())).' | __CF_USER_TEXT_ENCODING='.posix_getuid().':0x8000100:0x8000100 pbcopy';
+shell_exec($cmd);
+</string>
+	<key>contact</key>
+	<string>fgnaxbivp.mnexb@tznvy.pbz</string>
+	<key>description</key>
+	<string>Copies result set similar to MySQL CLI tabular output.</string>
+	<key>input</key>
+	<string>selectedtablerowsastab</string>
+	<key>keyEquivalent</key>
+	<string></string>
+	<key>name</key>
+	<string>Copy as MySQL CLI output</string>
+	<key>scope</key>
+	<string>datatable</string>
+	<key>tooltip</key>
+	<string>Copy result set similar to MySQL CLI</string>
+	<key>uuid</key>
+	<string>8FF39721-8651-4B64-AC2E-AED0C6AEFF3C</string>
+	<key>withblob</key>
+	<string>exclude</string>
+</dict>
+</plist>
