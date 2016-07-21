@@ -9,9 +9,12 @@
 	<key>command</key>
 	<string>#!/usr/bin/python2.7
 
+import os
 import subprocess
 import sys
 
+# Force pasteboard to treat this text as UTF-8 encoded.
+os.environ['LANG'] = 'en_US.UTF-8'
 
 rows = [line.strip().split('\t') for line in sys.stdin]
 longest = [max(len(v) for v in col) for col in zip(*rows)]
