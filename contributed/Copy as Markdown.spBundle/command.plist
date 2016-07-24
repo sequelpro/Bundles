@@ -9,14 +9,17 @@
 	<key>command</key>
 	<string>#!/usr/bin/python2.7
 
+import os
 import subprocess
 import sys
 
+# Force pasteboard to treat this text as UTF-8 encoded.
+os.environ['LANG'] = 'en_US.UTF-8'
 
 rows = [line.strip().split('\t') for line in sys.stdin]
 longest = [max(len(v) for v in col) for col in zip(*rows)]
-out_rows = [' | '.join(v.ljust(l) + ' |' for l, v in zip(longest, row)) for row in rows]
-out_rows.insert(1, '|'.join('-' * (l + 2) for l in longest)[1:] + ' |')
+out_rows = [' | '.join(v.ljust(l) for l, v in zip(longest, row)) + ' |' for row in rows]
+out_rows.insert(1, '|'.join('-' * (l + 2) for l in longest)[1:] + '|')
 out_value = '\n'.join(out_rows)
 
 proc = subprocess.Popen(['/usr/bin/pbcopy'], stdin=subprocess.PIPE)
