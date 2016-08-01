@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>command</key>
+	<string>#!/bin/bash
+cd "$SP_BUNDLE_PATH"
+/bin/bash main.sh
+  </string>
+	<key>input</key>
+	<string>selectedtablerowsastab</string>
+	<key>internalKeyEquivalent</key>
+	<dict>
+		<key>characters</key>
+		<string>J</string>
+		<key>keyCode</key>
+		<integer>38</integer>
+		<key>modifierFlags</key>
+		<integer>262144</integer>
+	</dict>
+	<key>keyEquivalent</key>
+	<string>^j</string>
+	<key>name</key>
+	<string>Test</string>
+	<key>output</key>
+	<string>showashtml</string>
+	<key>scope</key>
+	<string>datatable</string>
+	<key>uuid</key>
+	<string>E6E291E7-9A58-4E41-ADDD-706AA07A68BD</string>
+	<key>withblob</key>
+	<string>include</string>
+</dict>
+</plist>
