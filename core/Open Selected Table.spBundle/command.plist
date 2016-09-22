@@ -34,6 +34,11 @@ done
 # Read the chosen list item
 APP=$(cat "$SP_QUERY_RESULT_FILE")
 
+# Fix URL Encoding
+if [ $APP = "Microsoft%20Excel" ]; then
+	APP=$(echo "Microsoft Excel")
+fi
+
 # Check if user dismissed, if so bail (if $APP is empty := user pressed ESC)
 if [ -z "$APP" ]; then
 	rm -f "$SP_QUERY_RESULT_FILE"
