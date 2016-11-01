@@ -69,9 +69,10 @@ while($rowData) {
 			print "$d";
 		} else {
 			chomp($cellData);
+			$cellData =~ s/(?:\r)?\n/\\n/g;
 			print "\"$cellData\"";
 		}
-		
+
 		# suppress last ,
 		if($i&lt;$h_cnt) {
 			print ",";
