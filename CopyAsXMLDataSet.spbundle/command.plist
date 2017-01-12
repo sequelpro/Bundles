@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>author</key>
+	<string>Chandra Siva</string>
+	<key>category</key>
+	<string>Copy</string>
+	<key>command</key>
+	<string>cat | perl -e '
+
+# read first line to get the column names (header)
+$firstLine = &lt;&gt;;
+
+# bail if nothing could read
+if(!defined($firstLine)) {
+	exit 0;
+}
+
+# store the column names
+chomp($firstLine);
+$firstLine =~ s/\"/\\\"/g;  # escape "
+@header = split(/\t/, $firstLine);
+
+$h_cnt = $#header;     # number of columns
+
+# get the column definitions
+open(META, $ENV{"SP_BUNDLE_INPUT_TABLE_METADATA"}) or die $!;
+@meta = ();
+while(&lt;META&gt;) {
+	chomp();
+	my @arr = split(/\t/);
+	push @meta, \@arr;
+}
+close(META);
+
+# read row data of each selected row
+$rowData=&lt;&gt;;
+
+print "&lt;table name=\"" . $ENV{"SP_SELECTED_TABLE"} . "\"&gt;\n";
+for($i=0; $i&lt;=$h_cnt; $i++) {
+     print "\t&lt;column&gt;$header[$i]&lt;/column&gt;\n";
+}
+
+while($rowData) {
+
+	# remove line ending
+	chomp($rowData);
+
+	# escape "
+	$rowData=~s/\"/\\\"/g;
+
+	# split column data which are tab-delimited
+	@data = split(/\t/, $rowData);
+	print "\t&lt;row&gt;\n";
+	for($i=0; $i&lt;=$h_cnt; $i++) {
+
+		# re-escape \t and \n
+		$cellData = $data[$i];
+		$cellData =~ s/&amp;/&amp;amp;/g;
+		$cellData =~ s/↵/\n/g;
+		$cellData =~ s/⇥/\t/g;
+
+		# check for data types
+		if($cellData eq "NULL")  {
+			print "\t\t&lt;value&gt;[NULL]&lt;/value&gt;";
+	        } elsif($meta[$i]-&gt;[1] eq "integer" || $meta[$i]-&gt;[1] eq "float") {
+			chomp($cellData);
+			$d = $cellData+0;
+			print "\t\t&lt;value&gt;$d&lt;/value&gt;";
+		} elsif($meta[$i]-&gt;[1] eq "textdata") {
+			chomp($cellData);
+	                $cellData=~s/\\\"/\"/g;
+			print "\t\t&lt;value&gt;&lt;![CDATA[\n$cellData\n]]&gt;\n&lt;/value&gt;";
+                } else {
+			chomp($cellData);
+			print "\t\t&lt;value&gt;$cellData&lt;/value&gt;";
+		}
+		
+		print "\n";
+	}
+	print "\t&lt;/row&gt;";
+
+	# get next row
+	$rowData=&lt;&gt;;
+
+	if($rowData) {
+		print "\n";
+	}
+}
+print "\n&lt;/table&gt;";
+
+print "";
+
+' | __CF_USER_TEXT_ENCODING=$UID:0x8000100:0x8000100 pbcopy</string>
+	<key>contact</key>
+	<string>rznvy@punaqenbayvar.arg</string>
+	<key>defaultBundleWasModified</key>
+	<true/>
+	<key>description</key>
+	<string>Copies the selected rows excluding any BLOB data in a data table XMLDataSet formatted into the pasteboard.
+
+Version 1.0</string>
+	<key>input</key>
+	<string>selectedtablerowsastab</string>
+	<key>internalKeyEquivalent</key>
+	<dict>
+		<key>characters</key>
+		<string>C</string>
+		<key>keyCode</key>
+		<integer>8</integer>
+		<key>modifierFlags</key>
+		<integer>262144</integer>
+	</dict>
+	<key>isDefaultBundle</key>
+	<true/>
+	<key>keyEquivalent</key>
+	<string>^c</string>
+	<key>name</key>
+	<string>Copy as XMLDataSet</string>
+	<key>output</key>
+	<string>none</string>
+	<key>scope</key>
+	<string>datatable</string>
+	<key>tooltip</key>
+	<string>Copies the selected rows excluding any BLOB data XMLDataSet formatted into the pasteboard</string>
+	<key>uuid</key>
+	<string>4CC7DB8E-6110-11E1-B696-080027372F5E</string>
+</dict>
+</plist>
