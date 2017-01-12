@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>author</key>
+	<string>Rob Gordijn</string>
+	<key>category</key>
+	<string>Format</string>
+	<key>command</key>
+	<string>SQL=$(cat)
+if [ -z "$SQL" ]; then
+	echo "No SQL found."
+	exit $SP_BUNDLE_EXIT_SHOW_AS_TEXT_TOOLTIP
+fi
+
+OUTPUT=$(curl -s -X POST --data "$SQL" 'https://sql.liefbierglas.nl/format')
+
+printf "%b" "$OUTPUT"</string>
+	<key>contact</key>
+	<string>rob@liefbierglas.nl</string>
+	<key>description</key>
+	<string>A simple SQL formatter</string>
+	<key>input</key>
+	<string>entirecontent</string>
+	<key>input_fallback</key>
+	<string>currentquery</string>
+	<key>internalKeyEquivalent</key>
+	<dict>
+		<key>characters</key>
+		<string>F</string>
+		<key>keyCode</key>
+		<integer>3</integer>
+		<key>modifierFlags</key>
+		<integer>393216</integer>
+	</dict>
+	<key>keyEquivalent</key>
+	<string>^$F</string>
+	<key>name</key>
+	<string>SQL Formatter</string>
+	<key>output</key>
+	<string>replacecontent</string>
+	<key>scope</key>
+	<string>inputfield</string>
+	<key>trigger</key>
+	<string>none</string>
+	<key>uuid</key>
+	<string>32B9FD38-CB56-40B8-A721-1DB97242A85D</string>
+</dict>
+</plist>
