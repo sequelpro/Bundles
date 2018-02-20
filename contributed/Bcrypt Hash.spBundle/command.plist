@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>author</key>
+	<string>Romain Biard</string>
+	<key>category</key>
+	<string>Hash</string>
+	<key>command</key>
+	<string>./encrypt.sh</string>
+	<key>description</key>
+	<string>Encrypts a string using BCRYPT algorithm</string>
+	<key>input</key>
+	<string>selectedtext</string>
+	<key>input_fallback</key>
+	<string>entirecontent</string>
+	<key>keyEquivalent</key>
+	<string></string>
+	<key>name</key>
+	<string>BCRYPT</string>
+	<key>output</key>
+	<string>replaceselection</string>
+	<key>scope</key>
+	<string>inputfield</string>
+	<key>uuid</key>
+	<string>37A7Ad4C-AB7C-4CEC-9451-FA551C16400F</string>
+</dict>
+</plist>
